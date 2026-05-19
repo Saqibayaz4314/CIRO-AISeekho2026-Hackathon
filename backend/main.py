@@ -565,6 +565,42 @@ async def reset_state():
 # ---------------------------------------------------------------------------
 # Trace Logs Endpoint
 # ---------------------------------------------------------------------------
+@app.get("/logs", tags=["Logging"], summary="List all available incident logs")
+async def list_all_logs():
+    """List all available trace logs (recent incidents)."""
+    import json
+    from pathlib import Path
+
+    logs_dir = Path(__file__).parent / "logs" / "agent_traces"
+    
+    if not logs_dir.exists():
+        return {"logs": [], "total": 0}
+    
+    # Get all trace files, sorted by modification time (newest first)
+    trace_files = sorted(
+        logs_dir.glob("*.json"),
+        key=lambda x: x.stat().st_mtime,
+        reverse=True
+    )
+    
+    logs = []
+    for trace_file in trace_files:
+        try:
+            with open(trace_file, "r", encoding="utf-8") as f:
+                trace_data = json.load(f)
+                logs.append({
+                    "trace_id": trace_data.get("trace_id", ""),
+                    "incident_id": trace_data.get("incident_id", ""),
+                    "timestamp": trace_data.get("timestamp", ""),
+                    "total_duration_ms": trace_data.get("total_duration_ms", 0),
+                    "agents_count": len(trace_data.get("agents", {})),
+                })
+        except Exception as e:
+            print(f"Error reading trace file {trace_file}: {e}")
+    
+    return {"logs": logs, "total": len(logs)}
+
+
 @app.get("/logs/{trace_id}", tags=["Logging"])
 async def get_agent_logs(trace_id: str):
     """Retrieve agent trace logs for a specific trace ID."""

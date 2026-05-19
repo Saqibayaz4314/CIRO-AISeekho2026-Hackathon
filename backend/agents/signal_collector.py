@@ -230,6 +230,35 @@ class SignalCollector:
                     
                     sources_checked.append("sensors")
 
+                    # Social Media Signals
+                    try:
+                        social_resp = await client.get(
+                            f"{_MOCK_BASE_URL}/mock/social",
+                            params={"area": detected_location}
+                        )
+                        if social_resp.status_code == 200:
+                            social_data = social_resp.json()
+                            social_signals = social_data.get('signals', [])
+                            
+                            if social_signals:
+                                for signal in social_signals:
+                                    signals.append(Signal(
+                                        source=SignalSource.SOCIAL_MEDIA,
+                                        text=signal.get('text', ''),
+                                        credibility=signal.get('credibility', 0.65),
+                                        timestamp=datetime.now(timezone.utc),
+                                        location=detected_location,
+                                        metadata={
+                                            "language": signal.get('language', 'unknown'),
+                                            "mention_velocity": signal.get('mention_velocity', 0),
+                                            "source": social_data.get('source', 'Social Media Monitor'),
+                                        },
+                                    ))
+                    except Exception as e:
+                        errors.append(f"Social Media API failed: {e}")
+                    
+                    sources_checked.append("social_media")
+
             except Exception as e:
                 errors.append(f"API collection failed: {e}")
 
