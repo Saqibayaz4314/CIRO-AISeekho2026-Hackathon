@@ -1281,9 +1281,8 @@ MIT License - See LICENSE file for details
 ## Support & Contact
 
 For questions, issues, or feedback:
-- 📧 Email: [support@aiseekho.io](mailto:support@aiseekho.io)
+- 📧 Email: [saqibdev24@gmail.com](mailto:saqibdev24@gmail.com)
 - 💬 GitHub Issues: [Report here](../../issues)
-- 🐦 Twitter: [@AISeekho](https://twitter.com/AISeekho)
 
 ---
 
