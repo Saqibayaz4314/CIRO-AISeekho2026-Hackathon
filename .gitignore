@@ -1,0 +1,118 @@
+# Build and Generated Files
+build/
+dist/
+*.apk
+*.aab
+*.jar
+*.zip
+*.tar.gz
+
+# Gradle
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+*.gradle.kts.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.pyc
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.netbeans/
+nbproject/
+
+# Local Configuration Files
+local.properties
+gradle.properties.local
+.env
+.env.local
+.env.*.local
+
+# Sensitive Files & Credentials
+*-firebase-adminsdk-*.json
+*firebase*.json
+*.p12
+*.keystore
+*.jks
+secrets/
+credentials/
+.aws/
+
+# Logs
+logs/
+*.log
+*.log.*
+backend/logs/
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Build/Deployment Artifacts
+*.apk
+*.aab
+mobile_app/build/
+backend/build/
+
+# Test & Analysis Files
+sqa_test_suite.py
+ui_analysis.json
+
+# Internal Documentation
+pdf_images/
+visily-multiscreens.pdf
+AGENTS_IMPROVEMENT_SUMMARY_HI_UR.md
+APK_LOCATION.md
+QUICK_COMMANDS.md
+QUICK_IMPLEMENTATION.md
+
+# Node modules (if applicable)
+node_modules/
+npm-debug.log
+
+# Cache Files
+.cache/
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+*~
+.#*

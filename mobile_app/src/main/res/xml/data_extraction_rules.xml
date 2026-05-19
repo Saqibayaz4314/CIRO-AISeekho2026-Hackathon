@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup-rules>
+        <exclude domain="sharedpref" path="ciro_prefs.xml"/>
+    </cloud-backup-rules>
+    <device-transfer-rules>
+        <exclude domain="sharedpref" path="ciro_prefs.xml"/>
+    </device-transfer-rules>
+</data-extraction-rules>

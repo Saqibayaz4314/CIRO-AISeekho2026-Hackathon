@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- CIRO "C" letter icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,28 C68.36,28 80,39.64 80,54 C80,68.36 68.36,80 54,80 C39.64,80 28,68.36 28,54 C28,39.64 39.64,28 54,28 Z M54,36 C44.06,36 36,44.06 36,54 C36,63.94 44.06,72 54,72 C63.94,72 72,63.94 72,54 L64,54 C64,59.52 59.52,64 54,64 C48.48,64 44,59.52 44,54 C44,48.48 48.48,44 54,44 C57.16,44 59.98,45.46 61.86,47.72 L68.28,41.3 C64.86,37.88 59.7,36 54,36 Z" />
+</vector>
