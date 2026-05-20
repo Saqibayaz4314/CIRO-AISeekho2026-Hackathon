@@ -234,7 +234,7 @@ class SignalCollector:
                     try:
                         social_resp = await client.get(
                             f"{_MOCK_BASE_URL}/mock/social",
-                            params={"area": detected_location}
+                            params={"area": area_code}
                         )
                         if social_resp.status_code == 200:
                             social_data = social_resp.json()
